@@ -29,19 +29,41 @@ Calculadora = (function(){
 
 	numeros = [uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, cero];
 	
-	for (i in numeros) {
+	function nuevoNumero() {
+		for (i in numeros) {
 		numeros[i].onclick = function() {
-			anterior = display.innerHTML;
+		anterior = display.innerHTML;
 
-			if (anterior == 0) {
-				display.innerHTML = this.getAttribute('alt');
+		if (anterior == 0) {
+				newNumber = this.getAttribute('alt');
+				display.innerHTML = newNumber;
 			} else {
-				display.innerHTML = anterior + this.getAttribute('alt');
+				newNumber = anterior + this.getAttribute('alt');
+				display.innerHTML = newNumber;
 			};
 			
-		}
+		};
+	};
 	}
+
+	nuevoNumero();
+
+
 	
+
+//Operando
+	mas = document.getElementById('mas');
+	menos = document.getElementById('menos');
+	por = document.getElementById('por');
+	dividido = document.getElementById('dividido');
+	igual = document.getElementById('igual');
+
+function suma() {
+	result = parseFloat(newNumber) + 10;
+};
+
+mas.addEventListener('click', suma);
+
 	
 
 }());
