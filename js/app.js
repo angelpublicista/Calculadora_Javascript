@@ -28,17 +28,19 @@ Calculadora = (function(){
 	cero = document.getElementById('0');
 
 	numeros = [uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, cero];
-	cadenaTexto = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-
-
-	for (i = 0; i < numeros.length; i++) {
+	
+	for (i in numeros) {
 		numeros[i].onclick = function() {
-			display.innerHTML = '1';
-		};
+			anterior = display.innerHTML;
+
+			if (anterior == 0) {
+				display.innerHTML = this.getAttribute('alt');
+			} else {
+				display.innerHTML = anterior + this.getAttribute('alt');
+			};
+			
+		}
 	}
-
-
-
 	
 	
 
