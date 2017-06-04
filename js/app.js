@@ -30,25 +30,33 @@ Calculadora = (function(){
 	numeros = [uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, cero];
 	
 	function nuevoNumero() {
-		for (i in numeros) {
-		numeros[i].onclick = function() {
-		anterior = display.innerHTML;
+			for (i in numeros) {
+			numeros[i].onclick = function() {
+			anterior = display.innerHTML;
 
-		if (anterior == 0) {
-				newNumber = this.getAttribute('alt');
-				display.innerHTML = newNumber;
-			} else {
-				newNumber = anterior + this.getAttribute('alt');
-				display.innerHTML = newNumber;
+			if (anterior == 0) {
+					newNumber = this.getAttribute('alt');
+					newNumber = parseFloat(newNumber);
+					display.innerHTML = newNumber;
+				} else {
+					newNumber = anterior + this.getAttribute('alt');
+					newNumber = parseFloat(newNumber);
+					display.innerHTML = newNumber;
+				};
+				
 			};
-			
 		};
 	};
-	}
 
 	nuevoNumero();
 
+//ON/C
+	eliminar = document.getElementById('on');
+	function eliminar_todo() {
+		display.innerHTML = '0';
+	}
 
+	eliminar.addEventListener('click', eliminar_todo);
 	
 
 //Operando
@@ -58,12 +66,7 @@ Calculadora = (function(){
 	dividido = document.getElementById('dividido');
 	igual = document.getElementById('igual');
 
-function suma() {
-	result = parseFloat(newNumber) + 10;
-};
-
-mas.addEventListener('click', suma);
-
+	
 	
 
 }());
