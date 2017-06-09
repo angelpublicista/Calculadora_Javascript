@@ -66,8 +66,8 @@ Calculadora = (function(){
 //ON/C
 	eliminar = document.getElementById('on');
 	function eliminar_todo() {
-		newNumber = 0;
-		display.innerHTML = newNumber;
+		seteado = 0;
+		display.innerHTML = seteado;
 	};
 
 	eliminar.addEventListener('click', eliminar_todo);
@@ -80,6 +80,12 @@ Calculadora = (function(){
 	dividido = document.getElementById('dividido');
 	igual = document.getElementById('igual');
 
+function operacion() {
+	numero1 = parseFloat(newNumber);
+	display.innerHTML = '';
+};
+
+mas.addEventListener('click', operacion);
 
 /*dividir: function(){
 if(accion == "inicio"){accion = "dividir"}
